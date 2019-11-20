@@ -12,6 +12,14 @@ fps = 100
 
 gameScreen = pygame.display.set_mode((width,height))
 
+def collision(ball1,ball2):
+    distance = math.sqrt( ((ball2.x - ball1.x) ** 2) + ((ball2.y - ball1.y) ** 2))
+    if distance < ball1.radius + ball2.radius:
+        ball1.moveX *= -1
+        ball1.moveY *= -1
+        ball2.moveX *= -1
+        ball2.moveY *= -1
+
 class Ball:
     def __init__( self ):
         self.x = random.randint(0,width)
@@ -40,7 +48,7 @@ class Ball:
 # ball2.radius = 25
 
 balls = []
-for i in range(2):
+for i in range(3):
     ball = Ball()
     balls.append(ball)
 
@@ -58,9 +66,20 @@ while True:
     # pygame.draw.circle(gameScreen, green, (ball2.x, ball2.y), ball2.radius)
     # ball2.updateBall()
 
-    for ball in balls:
-        pygame.draw.circle(gameScreen, ball.color, (ball.x, ball.y), ball.radius)
-        ball.updateBall()
+    # for ball in balls:
+    #     pygame.draw.circle(gameScreen, ball.color, (ball.x, ball.y), ball.radius)
+    #     ball.updateBall()
+
+    for i in range(len(balls)):
+        currentBall = balls[i]
+        pygame.draw.circle(gameScreen, currentBall.color, (currentBall.x, currentBall.y), currentBall.radius)
+        currentBall.updateBall()
+        targetBalls = [ball for ball in balls if ball != currentBall]
+        for ball in targetBalls:
+            collision(currentBall, ball)
+        # print(targetBalls)
+    # print()
+    # print()
 
     pygame.display.update()
     clock.tick(fps)
