@@ -16,17 +16,21 @@ class Car:
     seats = None
     carDetails = []
 
+    def setCarDetails( self ):
+        self.carDetails =  [self.id, self.name, self.fuelType, self.transmissionType, self.seats] 
+
     def showDetails(self):
         print(f"Id is {self.id}")
         print(f"Name is {self.name}")
         print(f"Fuel Type is {self.fuelType}")
         print(f"Transmission type is {self.transmissionType}")
         print(f"Seats is {self.seats}")
-        self.carDetails.append( [self.id, self.name, self.fuelType, self.transmissionType, self.seats] )
+        # self.carDetails =  [self.id, self.name, self.fuelType, self.transmissionType, self.seats] 
         self.testFn(self.carDetails)
 
-    def testFn(*details):
-        print(*details)
+    def testFn(self, carDetails):
+        print(carDetails)
+        print(hex(id(carDetails)))
 
 myCar = Car()
 print(myCar.__class__)
@@ -44,6 +48,8 @@ myCar.name = 'hector'
 myCar.fuelType = 'diesel'
 myCar.transmissionType = 'A'
 myCar.seats = 7
+print(hex(id(myCar.carDetails)))
+myCar.setCarDetails()
 
 print(myCar.id)
 print(myCar.name)
@@ -60,6 +66,7 @@ myNewCar.name = 'seltos'
 myNewCar.fuelType = 'cng'
 myNewCar.transmissionType = 'A'
 myNewCar.seats = 5
+myNewCar.setCarDetails()
 
 print(myNewCar.id)
 print(myNewCar.name)
@@ -69,3 +76,7 @@ print(myNewCar.seats)
 
 print(myNewCar.__dict__)
 print(myNewCar.showDetails())
+print(myCar.showDetails())
+
+if isinstance(myNewCar,Car):
+    print("myNewCar is an object of Car")
