@@ -7,6 +7,3 @@ def register(name, email, password):
 
 def login(email,password):
     return model.login(email,password)
-
-def newFn():
-    pass

@@ -1,3 +1,7 @@
+import pymysql
+connection = pymysql.connect(host='localhost', port=3306, db='test', user='root', autocommit=True)
+cursor = connection.cursor()
+
 class User:
 
     userList = []
@@ -10,10 +14,15 @@ class User:
     def __str__( self ):
         return str(self.__dict__)
 
-def register( name , email , password ):
+# def register( name , email , password ):
+#     userObject = User(name,email,password)
+#     User.userList.append(userObject)
+#     return User.userList
+
+def register( name, email, password):
     userObject = User(name,email,password)
-    User.userList.append(userObject)
-    return User.userList
+    query = "insert into users values (%s, %s, %s)"
+    return cursor.execute(query, (userObject.name, userObject.email, userObject.password))
 
 def login( email, password):
     for userObject in User.userList:

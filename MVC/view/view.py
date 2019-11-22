@@ -11,10 +11,10 @@ def register():
     name = input("Enter your name : ")
     email = input("Enter your email : ")
     password = input("Enter password : ")
-    userList = controller.register(name, email, password)
-    for user in userList:
-        print(user)
-    print("Registered successfully..")
+    result = controller.register(name, email, password)
+    # for user in userList:
+    #     print(user)
+    print("Registered successfully..") if result == 1 else print("Registration failed") 
 
 def errorHandler():
     print("Invalid choice !")
@@ -26,4 +26,7 @@ while True:
     1. Login
     2. Register''')
     choice = input("Enter your choice : ")
-    options.get(choice,errorHandler)()
+    try:
+        options.get(choice,errorHandler)()
+    except BaseException as err:
+        print(err)
