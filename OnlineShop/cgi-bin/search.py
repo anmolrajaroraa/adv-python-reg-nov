@@ -1,5 +1,19 @@
 #!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
 
+import cgi
+
+fieldStorage = cgi.FieldStorage()
+query = fieldStorage.getvalue('q')
+
+intents = {
+    "mobiles" : ['mobiles', 'mobile', 'phone', 'phones', 'smartphone']
+}
+
+for category in intents:
+    if query in intents[category]:
+        query = category
+        break
+
 products = [
     {
         "product_id" : 1,
@@ -183,7 +197,7 @@ print('''
                     </li>
                   </ul>
                   <form action="search.py" class="form-inline my-2 my-lg-0">
-                    <input name="q" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <input name='q' class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
                   </form>
                 </div>
@@ -195,7 +209,8 @@ print('''
                 <div class="row">''')
 
 for product in products:
-    print(f'''
+    if query == product['product_category']:
+        print(f'''
         <div class="col-md-6 col-lg-4">
             <div class="card" style="width: 18rem; margin-bottom: 20px; padding: 10px;">
                 <img src="{product['product_image']}" class="card-img-top" alt="...">
