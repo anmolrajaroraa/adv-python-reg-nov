@@ -1,0 +1,49 @@
+
+h1{
+    text-align: center;
+    margin: 10px;
+}
+.mobiles{
+    width: 50%;
+}
+.mobiles-parent{
+    padding-left: 33%;
+    padding-top: 10%;
+}
+.televisions{
+    width: 100%;
+}
+.televisions-parent{
+    padding-left: 0%;
+}
+.refrigerators{
+    width: 40%;
+}
+.refrigerators-parent{
+    padding-left: 38%;
+}
+.washing-machines{
+    width: 55%;
+}
+.washing-machines-parent{
+    padding-left: 30%;
+}
+.home-kitchen{
+    width: 100%;
+}
+.home-kitchen-parent{
+    padding-left: 0%;
+    padding-top: 10%;
+}
+.home-kitchen-big{
+    width: 85%;
+}
+.home-kitchen-big-parent{
+    padding-left: 15%;
+    /* padding-top: 10%; */
+}
+.card-body-modified{
+    position: absolute;
+    left: 5%;
+    bottom: 5%;
+}
