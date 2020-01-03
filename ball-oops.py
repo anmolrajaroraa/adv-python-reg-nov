@@ -48,7 +48,7 @@ class Ball:
 # ball2.radius = 25
 
 balls = []
-for i in range(3):
+for i in range(400):
     ball = Ball()
     balls.append(ball)
 
@@ -75,8 +75,8 @@ while True:
         pygame.draw.circle(gameScreen, currentBall.color, (currentBall.x, currentBall.y), currentBall.radius)
         currentBall.updateBall()
         targetBalls = [ball for ball in balls if ball != currentBall]
-        for ball in targetBalls:
-            collision(currentBall, ball)
+        # for ball in targetBalls:
+        #     collision(currentBall, ball)
         # print(targetBalls)
     # print()
     # print()

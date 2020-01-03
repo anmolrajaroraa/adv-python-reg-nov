@@ -1,9 +1,4 @@
-#please fill this survey ;)
-#https://forms.gle/693ZzLtJheQenUKL7
-
-def getProducts():
-    return [
-        {
+products = [{
             "product_id" : 1,
             "product_brand" : "Realme",
             "product_name" : "C2 (Diamond Blue, 32 GB)",
@@ -149,6 +144,7 @@ def header():
         <title>Document</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
         <link rel="stylesheet" href="../style.css">
+        <script src="https://kit.fontawesome.com/cd00034d8b.js" crossorigin="anonymous"></script>
     </head>
     <body>
 
@@ -189,6 +185,22 @@ def header():
                     <h1>Deals of the Day</h1>
                     <hr>
                     <div class="row">''')
+
+def createProduct(product):
+    print(f'''
+        <div class="col-md-6 col-lg-4">
+            <div class="card" style="width: 18rem; height: 28rem; margin-bottom: 20px; padding: 10px;">
+                <div class="{product['product_category']}-parent">
+                    <img class="{product['product_category']}" src="{product['product_image']}" class="card-img-top" alt="...">
+                </div>
+                <div class="card-body card-body-modified">
+                    <h5 class="card-title">{product['product_brand'] + " " + product['product_name']}</h5>
+                    <p class="card-text">₹{product['product_price']}</p>
+                    <a href="product.py?pid={product['product_id']}" class="btn btn-primary">View Product</a>
+                </div>
+            </div>
+         </div>
+    ''')
 
 def footer():
     print('''    
