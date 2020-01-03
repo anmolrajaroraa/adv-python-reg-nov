@@ -1,4 +1,6 @@
-
+body{
+    background-color: #f1f3f6;
+}
 h1{
     text-align: center;
     margin: 10px;
@@ -46,4 +48,10 @@ h1{
     position: absolute;
     left: 5%;
     bottom: 5%;
+}
+h5{
+    color: white;
+}
+ul{
+    margin-top: 10px;
 }

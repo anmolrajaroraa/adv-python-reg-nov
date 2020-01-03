@@ -23,9 +23,9 @@ def createHorizontalProduct(product):
                 <div class="col-md-3">
                 <img src="{product['product_image']}" class="card-img" alt="...">
                 </div>
-                <div class="col-md-5 offset-md-1">
+                <div class="col-md-6 offset-md-1">
                 <div class="card-body">
-                    <h5 class="card-title">{html.find('span', '_35KyD6').text}</h5>
+                    <h4 class="card-title">{html.find('span', '_35KyD6').text}</h4>
                     <div style="padding:5px;background-color:#26a541;color:white;display:inline;border-radius:10%">{html.find('div', 'hGSR34').text} <i class="fas fa-star"></i></div>
                     <p class="card-text" style="color:black;margin-top:10px;">{html.find('div','_1vC4OE _3qQ9m1').text}
                         &nbsp;
@@ -33,11 +33,25 @@ def createHorizontalProduct(product):
                         &nbsp;
                         <span class="text-muted">{html.find('div', 'VGWI6T _1iCvwn').text}</span>
                     </p>
+                    <h5 style="padding:5px;background-color:#26a541;color:white;display:inline;border-radius:10%">Specifications</h5>
+                    <ul>''')
+
+    specs = html.find_all('li', '_2-riNZ')
+    
+    for spec in specs:
+        print(f"<li>{spec.text}</li>")
+
+    print('''   </ul><h5 style="padding:5px;background-color:#26a541;color:white;display:inline;border-radius:10%">Offers</h5><ul>   ''')
+
+    offers = html.find_all('li', '_2-n-Lg col')
+
+    for offer in offers:
+        print(f"<li>{offer.text}</li>")
                     
                     
+    print('''  </ul></div>
                 </div>
-                </div>
-                <div class="col-md-2 offset-md-1>
+                <div class="col-md-1 offset-md-1">
                 </div>
             </div>
             </div>
