@@ -7,7 +7,7 @@ pid = int(fieldStorage.getvalue('pid'))
 
 # products = base.getProducts()
 
-base.header()
+base.header("<img src='https://rukminim1.flixcart.com/flap/844/140/image/0e5483e33a969756.jpg?q=50'>")
 
 for product in base.products:
     if pid == product['product_id']:

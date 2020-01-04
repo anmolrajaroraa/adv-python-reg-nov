@@ -132,9 +132,9 @@ products = [{
         }
     ]
 
-def header():
+def header(heading):
     print("Content-type: text/html\r\n\r\n")
-    print('''
+    print(f'''
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -152,7 +152,7 @@ def header():
     <body style="color:black">
 
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                    <a class="navbar-brand" href="#">OnlineShop</a>
+                    <a class="navbar-brand" href="shop.py">OnlineShop</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                     </button>
@@ -160,7 +160,69 @@ def header():
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Login & Signup <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Login & Signup <span class="sr-only">(current)</span></a>
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title" id="exampleModalLabel">Signup</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+            <div class="form-group">
+                <label for="recipient-name" class="col-form-label">Userid</label>
+                <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-form-label">Email</label>
+                <input type="email" name="email" id="email"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-form-label">Password</label>
+                <input type="password" name="password" id="password"  class="form-control">
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">Existing user? Log in</a>
+
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Register</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header"  style="padding:30px 10px">
+            <h4 class="modal-title" id="exampleModalLabel">Signup</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body"   style="padding:30px 10px">
+            <form>
+            <div class="form-group">
+                <label for="email" class="col-form-label">Email</label>
+                <input type="email" name="email" id="email"  class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-form-label">Password</label>
+                <input type="password" name="password" id="password"  class="form-control">
+            </div>
+            </form>
+        </div>
+        <div class="modal-footer" style="padding:30px 10px">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary">Login</button>
+        </div>
+        </div>
+    </div>
+    </div>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="#">My Cart</a>
@@ -185,7 +247,7 @@ def header():
                 </nav>
 
                 <div class="container">
-                    <h1>Deals of the Day</h1>
+                    <h1>{heading}</h1>
                     <hr>
                     <div class="row">''')
 

@@ -4,7 +4,7 @@ import base
 
 # products = base.getProducts()
 
-base.header()
+base.header("Deals of the Day")
 
 for product in base.products:
     base.createProduct(product)
