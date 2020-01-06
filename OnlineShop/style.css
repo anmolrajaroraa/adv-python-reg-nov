@@ -55,3 +55,9 @@ h5{
 ul{
     margin-top: 10px;
 }
+#cartBtn{
+    color:#26a541;
+}
+#cartBtn:hover{
+    color:white;
+}

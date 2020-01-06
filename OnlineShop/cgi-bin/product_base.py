@@ -33,7 +33,7 @@ def createHorizontalProduct(product):
                         &nbsp;
                         <span class="text-muted">{html.find('div', 'VGWI6T _1iCvwn').text}</span>
                     </p>
-                    <h5 style="padding:5px;background-color:#26a541;color:white;display:inline;border-radius:10%">Specifications</h5>
+                    <h5 style="padding:5px 10px;background-color:#26a541;color:white;display:inline;border-radius:5%">Specifications</h5>
                     <ul>''')
 
     specs = html.find_all('li', '_2-riNZ')
@@ -41,7 +41,9 @@ def createHorizontalProduct(product):
     for spec in specs:
         print(f"<li>{spec.text}</li>")
 
-    print('''   </ul><h5 style="padding:5px;background-color:#26a541;color:white;display:inline;border-radius:10%">Offers</h5><ul>   ''')
+    print('''   </ul>
+    <h5 style="padding:5px 10px;background-color:#26a541;color:white;display:inline;border-radius:10%">Offers</h5>
+    <ul>   ''')
 
     offers = html.find_all('li', '_2-n-Lg col')
 
@@ -49,7 +51,9 @@ def createHorizontalProduct(product):
         print(f"<li>{offer.text}</li>")
                     
                     
-    print('''  </ul></div>
+    print(f'''  </ul>
+                <a id="cartBtn" href="cart.py?pid={product['product_id']}" class="btn btn-outline-success">Add To Cart</a>
+                </div>
                 </div>
                 <div class="col-md-1 offset-md-1">
                 </div>

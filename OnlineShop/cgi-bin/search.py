@@ -1,6 +1,6 @@
 #!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
 
-import cgi, base
+import cgi, base, DB
 
 fieldStorage = cgi.FieldStorage()
 query = fieldStorage.getvalue('q').lower()
@@ -22,7 +22,7 @@ for category in intents:
 
 base.header("Deals of the Day")
 
-for product in base.products:
+for product in DB.products:
     if query in product['product_category'] or query in product['product_brand'].lower() or query in product['product_name'].lower():
         base.createProduct(product)
 

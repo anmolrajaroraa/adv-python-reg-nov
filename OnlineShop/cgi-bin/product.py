@@ -1,6 +1,6 @@
 #!/Library/Frameworks/Python.framework/Versions/3.7/bin/python3
 
-import base,cgi,product_base
+import base,cgi,product_base,DB
 
 fieldStorage = cgi.FieldStorage()
 pid = int(fieldStorage.getvalue('pid'))
@@ -9,7 +9,7 @@ pid = int(fieldStorage.getvalue('pid'))
 
 base.header("<img src='https://rukminim1.flixcart.com/flap/844/140/image/0e5483e33a969756.jpg?q=50'>")
 
-for product in base.products:
+for product in DB.products:
     if pid == product['product_id']:
         product_base.createHorizontalProduct(product)
 
