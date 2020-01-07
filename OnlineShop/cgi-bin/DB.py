@@ -1,3 +1,9 @@
+horizontalProductCategories = [
+    'televisions',
+    'home-kitchen',
+    'home-kitchen-big'
+]
+
 products = [{
             "product_id" : 1,
             "product_brand" : "Realme",

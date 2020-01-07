@@ -1,5 +1,6 @@
 from urllib.request import urlopen
 from bs4 import BeautifulSoup as bs
+import DB
 
 def createHorizontalProduct(product):
     
@@ -18,10 +19,17 @@ def createHorizontalProduct(product):
     # print(html.find('div','_1vC4OE _3qQ9m1').text)
 
     print(f'''
-        <div class="card mb-3" style="width: 1200px; padding:10px;margin: 0 auto;">
+        <div class="card mb-3" style="width: 1200px; padding:25px;margin: 0 auto;">
             <div class="row no-gutters">
                 <div class="col-md-3">
+                <div  ''')
+    
+    if product['product_category'] in DB.horizontalProductCategories:
+        print("id='alignHorizontalImage'")   #adding id if image is horizontal
+    
+    print(f''' style="margin-left:20%">
                 <img src="{product['product_image']}" class="card-img" alt="...">
+                </div>
                 </div>
                 <div class="col-md-6 offset-md-1">
                 <div class="card-body">
