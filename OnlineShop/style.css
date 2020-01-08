@@ -44,6 +44,13 @@ h1{
     padding-left: 15%;
     /* padding-top: 10%; */
 }
+.watches{
+    width:68%;
+}
+.watches-parent{
+    padding-left: 75px;
+    padding-top: 10px;
+}
 .card-body-modified{
     position: absolute;
     left: 5%;

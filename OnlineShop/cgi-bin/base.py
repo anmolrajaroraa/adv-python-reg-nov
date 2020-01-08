@@ -26,7 +26,7 @@ def header(heading):
                     </button>
                 
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav mr-auto" style="margin-top:0px">
                         <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap">Login & Signup <span class="sr-only">(current)</span></a>
                         {modals.signupModal()}
@@ -40,10 +40,10 @@ def header(heading):
                             Categories
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Men</a>
-                            <a class="dropdown-item" href="#">Women</a>
+                            <a class="dropdown-item" href="shop.py?category=men's%20fashion">Men</a>
+                            <a class="dropdown-item" href="shop.py?category=women's%20fashion">Women</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Electronics</a>
+                            <a class="dropdown-item" href="shop.py?category=electronics">Electronics</a>
                         </div>
                         </li>
                     </ul>
@@ -63,8 +63,8 @@ def createProduct(product):
     print(f'''
         <div class="col-md-6 col-lg-4">
             <div class="card" style="width: 18rem; height: 28rem; margin-bottom: 20px; padding: 10px; border-radius: 10px;">
-                <div class="{product['product_category']}-parent">
-                    <img class="{product['product_category']}" src="{product['product_image']}" class="card-img-top" alt="...">
+                <div class="{product['product_sub_category']}-parent">
+                    <img class="{product['product_sub_category']}" src="{product['product_image']}" class="card-img-top" alt="...">
                 </div>
                 <div class="card-body card-body-modified">
                     <h6 class="card-title">{product['product_brand'] + " " + product['product_name']}</h6>

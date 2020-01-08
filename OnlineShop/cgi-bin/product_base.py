@@ -12,6 +12,8 @@ def createHorizontalProduct(product):
     # print(a)
     if a == None:
         a = html.find('a','_31qSD5')
+        if a == None:
+            a = html.find('a', '_3dqZjq')
     next_page = a['href']
     response = urlopen("https://flipkart.com" + next_page)
     html = bs(response)
@@ -24,7 +26,7 @@ def createHorizontalProduct(product):
                 <div class="col-md-3">
                 <div  ''')
     
-    if product['product_category'] in DB.horizontalProductCategories:
+    if product['product_sub_category'] in DB.horizontalProductCategories:
         print("id='alignHorizontalImage'")   #adding id if image is horizontal
     
     print(f''' style="margin-left:20%">
@@ -39,12 +41,17 @@ def createHorizontalProduct(product):
                         &nbsp;
                         <small class="text-muted" style="text-decoration: line-through;">{html.find('div', '_3auQ3N _1POkHg').text}</small>
                         &nbsp;
-                        <span class="text-muted">{html.find('div', 'VGWI6T _1iCvwn').text}</span>
+                        <span class="text-muted">{html.find('div', 'VGWI6T').text}</span>
                     </p>
-                    <h5 style="padding:5px 10px;background-color:#26a541;color:white;display:inline;border-radius:5%">Specifications</h5>
-                    <ul>''')
+                    ''')
 
     specs = html.find_all('li', '_2-riNZ')
+
+    # print("Specs is ", specs)
+
+    if len(specs) > 0:
+        print('''<h5 style="padding:5px 10px;background-color:#26a541;color:white;display:inline;border-radius:5%">Specifications</h5>
+                    <ul>''')
     
     for spec in specs:
         print(f"<li>{spec.text}</li>")
@@ -78,5 +85,5 @@ def createHorizontalProduct(product):
 #             "product_mrp" : 7999,
 #             "discount_percentage" : 18,
 #             "product_rating" : 4.4,
-#             "product_category" : "mobiles"
+#             "product_sub_category" : "mobiles"
 #         })

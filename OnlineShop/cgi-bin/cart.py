@@ -18,4 +18,12 @@ for product in DB.products:
         if x[0] == product['product_id']:
             base.createProduct(product)
 
+print('''
+    <div class = "row" style="width:100%">
+        <div class="col-md-2 offset-md-5" >
+        <button class="btn btn-primary">Proceed to Payment</button>
+        </div>
+    </div>
+''')
+
 base.footer()
