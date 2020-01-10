@@ -23,7 +23,7 @@ for category in intents:
 
 # products = base.getProducts()
 
-base.header("Deals of the Day")
+base.header("Products")
 
 for product in DB.products:
     if query in product['product_sub_category'] or query in product['product_brand'].lower() or query in product['product_name'].lower() or query == product['product_category']:

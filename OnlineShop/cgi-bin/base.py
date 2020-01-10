@@ -54,7 +54,7 @@ def header(heading):
                     </div>
                 </nav>
 
-                <div class="container">
+                <div class="container" style="position:relative;">
                     <h1>{heading}</h1>
                     <hr>
                     <div class="row">''')

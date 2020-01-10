@@ -10,10 +10,10 @@ def signupModal():
             </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form action="signup.py" method="POST">
             <div class="form-group">
                 <label for="recipient-name" class="col-form-label">Userid</label>
-                <input type="text" class="form-control" id="recipient-name">
+                <input type="text" class="form-control" id="recipient-name" name="userid">
             </div>
             <div class="form-group">
                 <label for="email" class="col-form-label">Email</label>
@@ -23,13 +23,14 @@ def signupModal():
                 <label for="password" class="col-form-label">Password</label>
                 <input type="password" name="password" id="password"  class="form-control">
             </div>
-            </form>
-        </div>
-        <div class="modal-footer">
+            
+        <div class="modal-footer" style="padding-bottom:0">
             <a href="#" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">Existing user? Log in</a>
 
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </div>
+        </form>
         </div>
         </div>
     </div>
@@ -48,7 +49,7 @@ def loginModal():
             </button>
         </div>
         <div class="modal-body"   style="padding:30px 10px">
-            <form>
+            <form action="login.py" method="POST">
             <div class="form-group">
                 <label for="email" class="col-form-label">Email</label>
                 <input type="email" name="email" id="email"  class="form-control">
@@ -57,11 +58,11 @@ def loginModal():
                 <label for="password" class="col-form-label">Password</label>
                 <input type="password" name="password" id="password"  class="form-control">
             </div>
-            </form>
-        </div>
-        <div class="modal-footer" style="padding:30px 10px">
+        <div class="modal-footer" style="padding:30px 10px 0px 10px">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Login</button>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </div>
+        </form>
         </div>
         </div>
     </div>

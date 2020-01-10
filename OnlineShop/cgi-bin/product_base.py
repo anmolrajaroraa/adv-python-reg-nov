@@ -67,7 +67,7 @@ def createHorizontalProduct(product):
                     
                     
     print(f'''  </ul>
-                <a id="cartBtn" href="cart.py?pid={product['product_id']}" class="btn btn-outline-success">Add To Cart</a>
+                <a id="addToCartBtn" href="cart.py?pid={product['product_id']}" class="btn btn-outline-success">Add To Cart</a>
                 </div>
                 </div>
                 <div class="col-md-1 offset-md-1">

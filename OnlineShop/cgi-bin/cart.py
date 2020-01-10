@@ -19,8 +19,8 @@ for product in DB.products:
             base.createProduct(product)
 
 print('''
-    <div class = "row" style="width:100%">
-        <div class="col-md-2 offset-md-5" >
+    <div class = "row" id="proceedToPaymentBtnParent">
+        <div class="col-md-2 offset-md-5" id="proceedToPaymentBtn">
         <button class="btn btn-primary">Proceed to Payment</button>
         </div>
     </div>

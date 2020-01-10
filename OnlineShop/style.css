@@ -62,12 +62,17 @@ h5{
 ul{
     margin-top: 10px;
 }
-#cartBtn{
+#addToCartBtn{
     color:#26a541;
 }
-#cartBtn:hover{
+#addToCartBtn:hover{
     color:white;
 }
 #alignHorizontalImage{
     margin-top: 50%
+}
+#proceedToPaymentBtn{
+    position: absolute;
+    top:-5px;
+    right:0px;
 }

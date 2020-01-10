@@ -9,8 +9,7 @@ category = fieldStorage.getvalue('category')
 
 if category != None:
     category = category.replace("%20", " ")
-    category = category.upper()
-    base.header(category)
+    base.header(category.upper())
     for product in DB.products:
         if product['product_category'] == category:
             base.createProduct(product)
